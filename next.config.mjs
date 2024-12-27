@@ -1,4 +1,3 @@
-// filepath: /Users/kevinpan/projects/kevin-website/next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
@@ -8,5 +7,7 @@ const nextConfig = {
   },
   output: 'export', // Enable static export
 };
+
+console.log('NEXT_PUBLIC_BASE_PATH:', process.env.NEXT_PUBLIC_BASE_PATH);
 
 export default nextConfig;

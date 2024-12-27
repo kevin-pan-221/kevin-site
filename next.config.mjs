@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/personal-website/' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/personal-website' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/kevin-site/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/kevin-site' : '',
   images: {
     unoptimized: true, // This is necessary for static export
   },

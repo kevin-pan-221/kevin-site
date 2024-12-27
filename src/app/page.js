@@ -97,15 +97,13 @@ export default function Home() {
 
           <Box sx={{ flex: '0 0 auto' }}>
             <Image
-              src="/images/kevin_pfp_2.jpg"
+              src={`${basePath}/images/kevin_pfp_2.jpg`} // Use the basePath variable
               alt="Profile picture"
               width={300}
               height={300}
               style={{
                 borderRadius: '16px', // Slightly rounded corners for the image itself
                 objectFit: 'cover', // Ensure the image fills its container
-                width: '100%',
-                height: '100%',
               }}
             />
           </Box>

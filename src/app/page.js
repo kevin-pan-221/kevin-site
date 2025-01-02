@@ -1,28 +1,28 @@
-'use client'; // Mark this as a Client Component
+'use client';
 
 import React from 'react';
 import Image from 'next/image';
 import { Container, Typography, Card, CardContent, CardMedia, Grid, Box } from '@mui/material';
 import Link from 'next/link';
 
-const projects = [
+const subPages = [
   {
     title: 'about me',
     description: 'interests contact info and stuff',
     image: '/images/project1.jpg',
-    link: '/about me',
+    link: '../about',
   },
   {
     title: 'projects',
     description: 'cool things ive worked on',
     image: '/images/project2.jpg',
-    link: '/projects',
+    link: '../projects',
   },
   {
     title: 'random',
     description: 'anything else',
     image: '/images/project2.jpg',
-    link: '/random',
+    link: '../random',
   }
 ];
 
@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <Box
       sx={{
-        backgroundColor: '#F0F0F0', // In between #F5F5F5 and #E0E0E0
+        backgroundColor: '#F0F0F0',
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
@@ -66,7 +66,7 @@ export default function Home() {
           </Typography>
 
             <Grid container spacing={4} justifyContent="flex-start" sx={{ marginTop: 4 }}>
-              {projects.map((project, index) => (
+              {subPages.map((project, index) => (
                 <Grid item key={index} xs={12} sm={6} md={4}>
                   <Link href={project.link} passHref style={{ textDecoration: 'none' }}>
                     <Card
@@ -99,13 +99,13 @@ export default function Home() {
 
           <Box sx={{ flex: '0 0 auto' }}>
             <Image
-              src={`${basePath}/images/kevin_pfp_2.jpg`} // Use the basePath variable
+              src={`${basePath}/images/kevin_pfp_2.jpg`}
               alt="Profile picture"
               width={300}
               height={300}
               style={{
-                borderRadius: '16px', // Slightly rounded corners for the image itself
-                objectFit: 'cover', // Ensure the image fills its container
+                borderRadius: '16px',
+                objectFit: 'cover',
               }}
             />
           </Box>

@@ -2,11 +2,15 @@
 
 import '@fontsource/inter'; // Import Inter font
 import React from 'react';
-import { ThemeProvider, createTheme, CssBaseline, AppBar, Toolbar, Typography, Container } from '@mui/material';
+import { ThemeProvider, createTheme, CssBaseline, AppBar, Toolbar, Typography, Container, Box } from '@mui/material';
 import { IconButton } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import HomeIcon from '@mui/icons-material/Home';
+import Link from 'next/link';
+import './globals.css';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const theme = createTheme({
   typography: {
@@ -43,13 +47,43 @@ function Header() {
   return (
     <AppBar position="static" color="primary">
       <Toolbar>
-        <Typography variant="h6" style={{ flexGrow: 1 }}>
-          Kevin Pan
-        </Typography>
+        <Link href={`${basePath}/`} passHref sx = {{ textDecoration: 'none' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              textDecoration: 'none',
+              color: 'white',
+              '& a:visited': {
+                color: 'white',
+                textDecoration: 'none',
+              },
+            }}
+          >
+            <Typography variant="h6" sx={{ marginRight: 1.5, color: 'inherit', textDecoration: 'none' }}>
+              Kevin Pan
+            </Typography>
+            <IconButton
+              sx={{
+                padding: 0,
+                color: 'white', 
+                textDecoration: 'none',
+                '&:hover': {
+                  backgroundColor: 'transparent', 
+                },
+              }}
+              aria-label="Home"
+              size="large"
+            >
+              <HomeIcon />
+            </IconButton>
+          </Box>
+        </Link>
+        <Box sx={{ flexGrow: 1 }} />
         <IconButton
           color="inherit"
           aria-label="LinkedIn"
-          href="https://www.linkedin.com/in/your-profile"
+          href="https://www.linkedin.com/in/kevin-pan221/"
           target="_blank"
           rel="noopener"
         >
@@ -58,7 +92,7 @@ function Header() {
         <IconButton
           color="inherit"
           aria-label="GitHub"
-          href="https://github.com/your-profile"
+          href="https://github.com/kevin-pan-221"
           target="_blank"
           rel="noopener"
         >
@@ -67,7 +101,7 @@ function Header() {
         <IconButton
           color="inherit"
           aria-label="Instagram"
-          href="https://www.instagram.com/your-profile"
+          href="https://www.instagram.com/kevinn.pan"
           target="_blank"
           rel="noopener"
         >
